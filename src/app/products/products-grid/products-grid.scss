@@ -3,7 +3,7 @@
   justify-content: center;
   align-items: stretch;
   padding: 40px 20px;
-  background-color: #00FA9A;
+  background-color: #f8fafc;
   min-height: 100vh;
 }
 
@@ -35,5 +35,10 @@ mat-icon {
 
 h3 {
   margin: 0;
-  color: #658bc941;
+  color: #5fe44a41;
+}
+
+button {
+  background-color: #1E293B;
+  color: white;
 }

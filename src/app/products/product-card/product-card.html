@@ -1,17 +1,17 @@
 <mat-card class="product-card">
   <mat-card-header>
-    <mat-card-title>{{ product().title }}</mat-card-title>
+    <mat-card-title>{{ product().name }}</mat-card-title>
   </mat-card-header>
 
   <mat-card-content>
-    @if (product().originalprice) {
+    @if (product().originalPrice) {
       <span class="sale-badge">Á Venda</span>
     }
 
    <div class="price-row">
-    @if (product().originalprice) {
+    @if (product().originalPrice) {
       <span class="current-price">{{ product().price }}</span>
-      <span class="origial-price">{{ product().originalprice}}</span>
+      <span class="original-price">{{ product().originalPrice}}</span>
     } @else {
       <span class="current-price">{{ product().description }}</span>
     }

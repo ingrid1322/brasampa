@@ -24,13 +24,16 @@ export class ProductsGrid {
       id: 2,
       name: 'Relógio inteligente fitness',
       description: 'Descrição do produto',
-      price: 299.99
+      price: 299.99,
+      originalPrice: 359.99
+
     },
     {
       id: 3,
       name: 'Caixa de som Bluetooth',
       description: 'Descrição do produto',
       price: 79.99,
+      originalPrice: 90.99
     }
   ]);
 }
