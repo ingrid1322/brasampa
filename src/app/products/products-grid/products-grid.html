@@ -1,5 +1,10 @@
 <div class="products-container">
 
+  <mat-form-field appearance="outline" class="search-field">
+    <mat-lbel>Buscar Produto</mat-lbel>
+    <input matInput placeholder="Por exemplo, Fones de ouvido"/>
+  </mat-form-field>
+
   <div class="products-grid">
     @for (product of products(); track product.id) {
       <app-product-card [product]="product" addButtonLabel="Ver Detalhes"/>

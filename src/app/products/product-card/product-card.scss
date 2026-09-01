@@ -72,4 +72,7 @@ mat-card-section {
   padding: 16px 0 0 0;
 }
 
+.mat-mdc-button:not(:disabled) {
+  color: #1e293b;
+}
 
