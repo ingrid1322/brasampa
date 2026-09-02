@@ -1,4 +1,4 @@
-import { CartService } from './cart-service';
+
 import { Injectable, signal, computed } from '@angular/core';
 import { Product } from '../products/product';
 import { CartItem } from './cart-item';
@@ -15,18 +15,18 @@ export class CartService {
     this.cartItems().reduce((total, item) => total + item.quantity, 0)
 );
 
-  addToCart(Product: Product) {
+  addToCart(product: Product) {
     this.cartItems.update((items) => {
-      const existingItem = items.find((item) => item.product.id === Product.id);
+      const existingItem = items.find((item) => item.product.id === product.id);
 
       if (existingItem) {
         return items.map((item: CartItem) =>
-          item.product.id === Product.id ? { ...item, quantity: item.quantity + 1}
+          item.product.id === product.id ? { ...item, quantity: item.quantity + 1}
         : item
         );
       }
 
-      return [...items, { Product, quantity: 1}];
+      return [...items, { product, quantity: 1}];
     });
   }
 
