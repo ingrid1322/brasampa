@@ -47,6 +47,10 @@ export class ProductsGrid {
 
   private readonly cartService = inject(CartService);
 
+  onAddToCart(product: Product) {
+    this.cartService.addToCart(product);
+  }
+
   protected readonly filteredProducts = computed(() => {
     const term = this.searchTerm().toLocaleLowerCase().trim();
     if (!term) return this.products();
