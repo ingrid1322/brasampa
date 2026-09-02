@@ -12,11 +12,11 @@ import { Product } from '../product';
 export class ProductCard {
 
   readonly product = input.required<Product>();
-  readonly addButtonLabel = input('Ver Detalhes');
+  readonly addButtonLabel = input('Add to Cart');
 
-  readonly addToCard = output<Product>();
+  readonly addToCart = output<Product>();
 
-  protected onVerDetalhes() {
-    this.addToCard.emit(this.product())
+  protected onAddToCard() {
+    this.addToCart.emit(this.product());
   }
 }

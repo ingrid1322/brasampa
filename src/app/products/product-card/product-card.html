@@ -21,6 +21,6 @@
   </mat-card-content>
 
   <mat-card-actions>
-    <button matButton class="btn-add-cart">{{ addButtonLabel() }}</button>
+    <button matButton (click)="onAddToCard()">{{ addButtonLabel() }}</button>
   </mat-card-actions>
 </mat-card>

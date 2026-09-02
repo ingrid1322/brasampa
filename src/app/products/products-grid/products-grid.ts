@@ -1,17 +1,19 @@
 import { clearScreen } from './../../../../node_modules/ansi-escapes/base.d';
-import { Component, computed, signal } from '@angular/core';
+import { Component, computed, inject, signal } from '@angular/core';
 import { ProductCard } from '../product-card/product-card';
 import { Product } from '../product';
 import { MatIcon } from "@angular/material/icon";
 import {MatInputModule} from '@angular/material/input';
 import {FormsModule} from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import { CartService } from '../../cart/cart-service';
 
 @Component({
   imports: [ProductCard, MatIcon, MatInputModule, FormsModule, MatFormFieldModule],
   selector: 'app-products-grid',
   styleUrl: './products-grid.scss',
   templateUrl: './products-grid.html',
+
 })
 export class ProductsGrid {
 
@@ -42,6 +44,8 @@ export class ProductsGrid {
     }
   ]);
 
+  private readonly cartService = inject(CartService);
+
   protected readonly filteredProducts = computed(() => {
     const term = this.searchTerm().toLowerCase().trim();
 
@@ -52,6 +56,11 @@ export class ProductsGrid {
       product.description.toLocaleLowerCase().includes(term)
   );
   });
+
+  protected onAddToCard(product: Product) {
+    //console.log('Adicionar um Produto: ', product.name);
+    this.cartService.addToCart(product);
+  }
 
   //protected clearSearch() {
   //  this.searchTerm.set('');
