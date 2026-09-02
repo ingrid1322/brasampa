@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { clearScreen } from './../../../../node_modules/ansi-escapes/base.d';
+import { Component, computed, signal } from '@angular/core';
 import { ProductCard } from '../product-card/product-card';
-import { signal } from '@angular/core';
 import { Product } from '../product';
 import { MatIcon } from "@angular/material/icon";
 import {MatInputModule} from '@angular/material/input';
@@ -41,4 +41,19 @@ export class ProductsGrid {
       originalPrice: 90.99
     }
   ]);
+
+  protected readonly filteredProducts = computed(() => {
+    const term = this.searchTerm().toLowerCase().trim();
+
+    if (!term) return this.products();
+
+    return this.products().filter((product) =>
+      product.name.toLocaleLowerCase().includes(term) ||
+      product.description.toLocaleLowerCase().includes(term)
+  );
+  });
+
+  protected clearSearch() {
+    this.searchTerm.set('');
+  }
 }
