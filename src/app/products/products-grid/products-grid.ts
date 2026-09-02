@@ -53,7 +53,7 @@ export class ProductsGrid {
   );
   });
 
-  protected clearSearch() {
-    this.searchTerm.set('');
-  }
+  //protected clearSearch() {
+  //  this.searchTerm.set('');
+ // }
 }

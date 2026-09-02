@@ -1,4 +1,4 @@
-import { Component, input  } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import { Product } from '../product';
@@ -13,4 +13,10 @@ export class ProductCard {
 
   readonly product = input.required<Product>();
   readonly addButtonLabel = input('Ver Detalhes');
+
+  readonly addToCard = output<Product>();
+
+  protected onVerDetalhes() {
+    this.addToCard.emit(this.product())
+  }
 }
