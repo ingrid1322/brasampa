@@ -1,15 +1,33 @@
-import { Injectable, Service, signal } from '@angular/core';
+import { CartService } from './cart-service';
+import { Injectable, signal, computed } from '@angular/core';
 import { Product } from '../products/product';
+import { CartItem } from './cart-item';
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class CartService {
 
-  private readonly cartItems = signal<Product[]>([]);
+  private readonly cartItems = signal<CartItem[]>([]);
 
-  addToCart(product: Product) {
-    console.log('Adicionar um Produto: ', product.name);
-    this.cartItems.update((items) => [...items, product]);
+  readonly totalItems = computed(() =>
+    this.cartItems().reduce((total, item) => total + item.quantity, 0)
+);
+
+  addToCart(Product: Product) {
+    this.cartItems.update((items) => {
+      const existingItem = items.find((item) => item.product.id === Product.id);
+
+      if (existingItem) {
+        return items.map((item: CartItem) =>
+          item.product.id === Product.id ? { ...item, quantity: item.quantity + 1}
+        : item
+        );
+      }
+
+      return [...items, { Product, quantity: 1}];
+    });
   }
+
 }

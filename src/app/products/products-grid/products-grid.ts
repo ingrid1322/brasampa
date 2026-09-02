@@ -8,6 +8,7 @@ import {FormsModule} from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { CartService } from '../../cart/cart-service';
 
+
 @Component({
   imports: [ProductCard, MatIcon, MatInputModule, FormsModule, MatFormFieldModule],
   selector: 'app-products-grid',
@@ -47,22 +48,16 @@ export class ProductsGrid {
   private readonly cartService = inject(CartService);
 
   protected readonly filteredProducts = computed(() => {
-    const term = this.searchTerm().toLowerCase().trim();
-
+    const term = this.searchTerm().toLocaleLowerCase().trim();
     if (!term) return this.products();
 
+
     return this.products().filter((product) =>
-      product.name.toLocaleLowerCase().includes(term) ||
-      product.description.toLocaleLowerCase().includes(term)
-  );
+      product.name.toLocaleLowerCase().includes(term)
+    );
   });
 
-  protected onAddToCard(product: Product) {
-    //console.log('Adicionar um Produto: ', product.name);
-    this.cartService.addToCart(product);
+  protected clearSearch() {
+    this.searchTerm.set('');
   }
-
-  //protected clearSearch() {
-  //  this.searchTerm.set('');
- // }
 }
