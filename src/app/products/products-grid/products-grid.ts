@@ -6,7 +6,7 @@ import { MatIcon } from "@angular/material/icon";
 import {MatInputModule} from '@angular/material/input';
 import {FormsModule} from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
-import { CartService } from '../../cart/cart-service';
+
 
 
 @Component({
@@ -27,28 +27,34 @@ export class ProductsGrid {
       description: 'Descrição do produto',
       price: 199.99,
       originalPrice: 249.99,
+      url: '#'
     },
     {
       id: 2,
       name: 'Relógio inteligente fitness',
       description: 'Descrição do produto',
       price: 299.99,
-      originalPrice: 359.99
-
+      originalPrice: 359.99,
+      url: '#'
     },
     {
       id: 3,
       name: 'Caixa de som Bluetooth',
       description: 'Descrição do produto',
       price: 79.99,
-      originalPrice: 90.99
-    }
+      originalPrice: 90.99,
+      url: '#'
+    },
   ]);
 
-  private readonly cartService = inject(CartService);
+
 
   onAddToCart(product: Product) {
-    this.cartService.addToCart(product);
+   if (product.url && product.url !== '#') {
+    window.open(product.url, '_blank');
+   } else {
+    console.log('Este produto ainda não tem um link válido configurado.');
+   }
   }
 
   protected readonly filteredProducts = computed(() => {

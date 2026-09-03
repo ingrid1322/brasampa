@@ -25,23 +25,45 @@ card-container {
   border: 1px solid #e2e8f0;
 }
 
-mat-card-header {
-  padding: 0;
-  margin-bottom: 8px;
+mat-card {
+  background-color: #1a1d2e;
+  border: 1px solid #2a2f45;
+  border-radius: 16px !important;
+  overflow: hidden;
+  transition: tranform 0.3s ease, box-shadow 0.3s ease !important;
+  color: #ffffff !important;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 242, 254, 0.2) !important;
+    border-color: #00f2fe;
+  }
 }
 
-mat-card-title {
-  font-size: 20px;
-  font-weight: 500;
-  color: #1e293b;
+mat-card-header {
+  padding: 16px;
+  mat-card-title {
+    font-size: 1.2rem !important;
+    font-weight: 700 !important;
+    color: #ffffff !important;
+  }
 }
 
 mat-card-content {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  flex: 1;
+  flex-grow: 1;
   padding: 0;
+
+  .description {
+    color: #a0aec0;
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
 }
 
 .sale-badge {
@@ -57,23 +79,23 @@ mat-card-content {
   width: fit-content;
 }
 
-.price-row {
+prices {
+  margin-top: 12px;
   display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-top: 4px;
-}
+  align-items: baseline;
+  gap: 8px;
 
-.current-price {
-  font-size: 18px;
-  font-weight: bold;
-  color: #1e293b;
-}
+  .current-price {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #00f2fe;
+  }
 
-.original-price {
-  font-size: 14px;
-  text-decoration: line-through;
-  color: #1e7cdab8;
+  .original-price {
+    font-size: 0.9rem;
+    color: #718096;
+    text-decoration: line-through;
+  }
 }
 
 .product-description {
@@ -83,8 +105,23 @@ mat-card-content {
   margin: 0;
 }
 
-mat-card-section {
-  padding: 16px 0 0 0;
+mat-card-actions {
+  padding: 0 16px 16px 16px !important;
+
+  button, a {
+    width: 100%;
+    padding: 22px !important;
+    font-weight: 700 !important;
+    letter-spacing: 1px;
+    border-radius: 8px !important;
+    background: linear-gradient(45deg, #0072ff, #00f2fe) !important;
+    color: white !important;
+    transition: opacity 0.2s ease;
+
+    &:hover {
+      opacity: 0.9;
+    }
+  }
 }
 
 .mat-mdc-button:not(:disabled) {

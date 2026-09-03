@@ -3,24 +3,21 @@
     <mat-card-title>{{ product().name }}</mat-card-title>
   </mat-card-header>
 
-  <mat-card-content>
-    @if (product().originalPrice) {
-      <span class="sale-badge">Á Venda</span>
-    }
+ <mat-card-content>
+  <p class="description">{{ product().description }}</p>
 
-   <div class="price-row">
+  <div class="prices">
     @if (product().originalPrice) {
-      <span class="current-price">{{ product().price }}</span>
-      <span class="original-price">{{ product().originalPrice}}</span>
-    } @else {
-      <span class="current-price">{{ product().description }}</span>
+      <span class="priginal-price">R$ {{ product().originalPrice }}</span>
     }
-   </div>
+    <span class="current-price">R$ {{ product().price }}</span>
+  </div>
 
-   <p class="product-description">{{ product().description }}</p>
-  </mat-card-content>
+ </mat-card-content>
 
   <mat-card-actions>
-    <button matButton (click)="onAddToCard()">{{ addButtonLabel() }}</button>
+    <button mat-flat-button (click)="onAddToCard()">
+      Comprar
+    </button>
   </mat-card-actions>
 </mat-card>

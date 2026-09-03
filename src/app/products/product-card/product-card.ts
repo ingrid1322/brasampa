@@ -12,7 +12,7 @@ import { Product } from '../product';
 export class ProductCard {
 
   readonly product = input.required<Product>();
-  readonly addButtonLabel = input('Add to Cart');
+  readonly addButtonLabel = input('Comprar');
 
   readonly addToCart = output<Product>();
 
