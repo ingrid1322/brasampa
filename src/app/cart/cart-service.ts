@@ -9,7 +9,7 @@ import { CartItem } from './cart-item';
 
 export class CartService {
 
-  private readonly cartItems = signal<CartItem[]>([]);
+  readonly cartItems = signal<CartItem[]>([]);
 
   readonly totalItems = computed(() =>
     this.cartItems().reduce((total, item) => total + item.quantity, 0)
