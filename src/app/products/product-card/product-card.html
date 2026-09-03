@@ -8,7 +8,7 @@
 
   <div class="prices">
     @if (product().originalPrice) {
-      <span class="priginal-price">R$ {{ product().originalPrice }}</span>
+      <span class="original-price">R$ {{ product().originalPrice }}</span>
     }
     <span class="current-price">R$ {{ product().price }}</span>
   </div>
@@ -16,8 +16,8 @@
  </mat-card-content>
 
   <mat-card-actions>
-    <button mat-flat-button (click)="onAddToCard()">
-      Comprar
-    </button>
+   <button mat-flat-button (click)="onAddToCart()">
+    Comprar
+   </button>
   </mat-card-actions>
 </mat-card>

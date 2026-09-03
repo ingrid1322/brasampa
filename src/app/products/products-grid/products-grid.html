@@ -1,20 +1,17 @@
-<div class="products-container">
-
+<div class="search-container">
   <mat-form-field appearance="outline" class="search-field">
     <mat-label>Buscar Produto</mat-label>
-    <input matInput [(ngModel)]="searchTerm" placeholder="Por exemplo, Fones de ouvido"/>
+    <input matInput [(ngModel)]="searchTerm" placeholder="Por exemplo, Fones de ouvido" >
   </mat-form-field>
-
-  <div class="products-grid">
-    @for (product of filteredProducts(); track product.id) {
-      <app-product-card [product]="product"
-      (addToCart)="onAddToCart($event)"/>
-    } @empty {
-      <div class="empty-state">
-        <mat-icon>inventory_2</mat-icon>
-        <p>Nenhum produto corresponde a busca</p>
-      </div>
-    }
-
-  </div>
 </div>
+
+<div class="products-container">
+  @for (product of filteredProducts(); track product.id) {
+    <app-product-card [product]="product" (addToCart)="onAddToCart($event)"></app-product-card>
+  } @empty {
+    <div class="empty-state">
+      <mat-icon>inventory_2</mat-icon>
+      <p>Nenhum produto corresponde a busca</p>
+    </div>
+  }
+  </div>

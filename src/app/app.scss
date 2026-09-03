@@ -1,6 +1,12 @@
 
 @import '../material-theme.scss';
 
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #0f111a !important;
+}
+
 .page {
   padding: 16px;
   max-width: 1200px;
