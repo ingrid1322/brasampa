@@ -4,11 +4,15 @@
 html, body {
   margin: 0;
   padding: 0;
+  height: 100%;
   background-color: #0f111a !important;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 
 .page {
-  padding: 16px;
+  padding: 40px 24px;
   max-width: 1200px;
   margin: 0 auto;
+  box-sizing: border-box;
 }

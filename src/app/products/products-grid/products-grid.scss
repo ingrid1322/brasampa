@@ -1,27 +1,48 @@
 :host {
   display: block;
-  padding: 24px;
-  background-color: #0f111a;
-  min-height: 100vh;
-}
-
-.search-container {
-  max-width: 600px;
-  margin: 0 auto 32px auto;
-}
-
-mat-form-field {
   width: 100%;
 
+.search-container {
+  max-width: 550px;
+  margin: 0 auto 40px auto;
+  padding: 0 16px;
+
   ::v-deep .mat-mdc-text-field-wrapper {
-    background-color: #1a1d2e !important;
+    background-color: #1a1d2e;
+    border-radius: 8px;
+  }
+
+  ::v-deep .mat-mdc-form-field-label {
+    color: #a0aec0;
+  }
+
+  ::v-deep input.mat-mdc-input-element {
+    color: #ffffff;
   }
 }
 
 .products-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 24px;
-  max-width: 1200px;
-  margin: 0 auto;
+  grid-template-columns: repeat(auto-fill, minmax(280, 1fr));
+  gap: 28px;
+  width: 100%;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 60px 16px;
+  color: #718096;
+
+  mat-icon {
+    font-size: 48px;
+    width: 48px;
+    height: 48px;
+    margin-bottom: 16px;
+  }
+
+  p {
+    font-size: 1.1rem;
+    margin: 0;
+  }
+}
 }
