@@ -1,4 +1,5 @@
 mat-toolbar.main-header {
+  display: flex !important;
   background-color: #ffffff !important;
   border-bottom: 1px solid #eaeaea !important;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33) !important;
@@ -21,3 +22,6 @@ mat-toolbar.main-header {
 }
 
 
+.spacer {
+  flex: 1 1 auto;
+}
