@@ -1,5 +1,5 @@
 import { clearScreen } from './../../../../node_modules/ansi-escapes/base.d';
-import { Component, computed, inject, signal } from '@angular/core';
+import { Component, computed, signal, ViewEncapsulation } from '@angular/core';
 import { ProductCard } from '../product-card/product-card';
 import { Product } from '../product';
 import { MatIcon } from "@angular/material/icon";
@@ -14,6 +14,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
   selector: 'app-products-grid',
   styleUrl: './products-grid.scss',
   templateUrl: './products-grid.html',
+  encapsulation: ViewEncapsulation.None
 
 })
 export class ProductsGrid {

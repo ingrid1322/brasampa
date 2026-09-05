@@ -1,48 +1,46 @@
+//Configuração geral do componente da grade
 :host {
   display: block;
   width: 100%;
+  background-color: #f8f9fa;
+  min-height: 100vh;
+}
 
+// 1. CONTAINER DA BARRA DE PESQUISA
 .search-container {
-  max-width: 550px;
-  margin: 0 auto 40px auto;
-  padding: 0 16px;
+  display: flex;
+  justify-content: center;
+  padding: 32px 24px 16px 24px;
+  width: 100%;
+}
 
-  ::v-deep .mat-mdc-text-field-wrapper {
-    background-color: #1a1d2e;
-    border-radius: 8px;
+mat-form-field.search-field {
+  width: 100%;
+  max-width: 500px;
+
+  .mat-mdc-text-field-wrapper {
+    background-color: #ffffff !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.267) !important;
   }
 
-  ::v-deep .mat-mdc-form-field-label {
-    color: #a0aec0;
-  }
-
-  ::v-deep input.mat-mdc-input-element {
-    color: #ffffff;
+  .mdc-line-ripple {
+    display: none !important;
   }
 }
 
 .products-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280, 1fr));
-  gap: 28px;
-  width: 100%;
-}
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)) !important;
+  gap: 24px !important;
+  padding: 24px !important;
+  max-width: 1200px !important;
+  margin: 0 auto !important;
 
-.empty-state {
-  text-align: center;
-  padding: 60px 16px;
-  color: #718096;
-
-  mat-icon {
-    font-size: 48px;
-    width: 48px;
-    height: 48px;
-    margin-bottom: 16px;
-  }
-
-  p {
-    font-size: 1.1rem;
-    margin: 0;
+  app-product-card {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
   }
 }
-}
+
+
