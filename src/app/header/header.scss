@@ -1,20 +1,22 @@
-.spacer {
-  flex: 1 1 auto;
+mat-toolbar.main-header {
+  background-color: #ffffff !important;
+  border-bottom: 1px solid #eaeaea !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33) !important;
+  padding: 0 24px !important;
+  height: 70px !important;
 }
 
-.main-header {
-  padding: 0 6px;
-  position: relative;
-  box-shadow: 0 1px 8px rgba(0, 0, 0, .3);
-  z-index: 9;
+.branding {
+  font-family: 'Poppins', 'Montserrat', 'Segoe UI', sans-serif !important;
+  font-size: 1.6rem !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.5px !important;
+  cursor: pointer !important;
+  margin-left: 8px !important;
 
-  .branding {
-    display: flex;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    margin: auto 0;
-    line-height: 50px;
-    padding: 0 64px 0 8px;
-  }
+  background: linear-gradient(135deg, #1e3b72be, #2a529860) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
 }
+
+
